@@ -1,0 +1,20 @@
+---
+
+- name: APT | Install apt-transport-https
+  apt: pkg=apt-transport-https state=present
+
+- name: APT_KEY | Get GPG key
+  apt_key: >
+    url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state=present
+
+- name: APT_REPOSITORY | Add repository
+  apt_repository: >
+    repo='deb https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state=present
+
+- name: APT_REPOSITORY | Add src repository
+  apt_repository: >
+    repo='deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state=present
+  when: nodejs_upstream_src

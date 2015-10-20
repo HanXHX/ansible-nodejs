@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+  vars:
+    test_dir: /tmp/node
+  pre_tasks:
+    - apt_repository: repo='deb http://httpredir.debian.net/debian wheezy-backports main'
+      when: >
+        ansible_distribution_release == 'wheezy' and
+        not nodejs_upstream
+  roles:
+    - ../../
+  post_tasks:
+    - file: path={{ test_dir }} state=directory
+    - npm: >
+        name=jsdom
+        production=yes
+        path={{ test_dir }}

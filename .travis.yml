@@ -1,0 +1,15 @@
+env:
+  - PLATFORM=debian-wheezy
+  - PLATFORM=debian-jessie
+  - UPSTREAM=yes
+  - UPSTREAM=no
+
+sudo: required
+
+language: python
+
+services:
+  - docker
+
+script:
+  - docker build -f tests/$PLATFORM.Dockerfile -t test-$PLATFORM . && docker run --name $PLATFORM test-$PLATFORM
