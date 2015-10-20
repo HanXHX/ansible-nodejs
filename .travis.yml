@@ -1,8 +1,8 @@
 env:
-  - PLATFORM=debian-wheezy
-  - PLATFORM=debian-jessie
-  - UPSTREAM=true
-  - UPSTREAM=false
+  - PLATFORM=debian-wheezy UPSTREAM=true
+  - PLATFORM=debian-jessie UPSTREAM=true
+  - PLATFORM=debian-wheezy UPSTREAM=false
+  - PLATFORM=debian-jessie UPSTREAM=false
 
 sudo: required
 
