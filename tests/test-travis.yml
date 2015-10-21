@@ -3,7 +3,7 @@
 - hosts: all
   vars:
     test_dir: /tmp/node
-    nodejs_upstream: "{{ lookup('env', 'UPSTREAM') }}"
+    nodejs_upstream: true
   pre_tasks:
     - apt_repository: repo='deb http://httpredir.debian.net/debian wheezy-backports main'
       when: >
