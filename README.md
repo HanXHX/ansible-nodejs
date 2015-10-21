@@ -14,6 +14,7 @@ Role Variables
 --------------
 
 - `nodejs_upstream`: boolean (default: true), install from upstream repository (version 4.\*)
+- `nodejs_upstream_src`: boolean (default: false), add upstream src (apt) repository
 
 Dependencies
 ------------
