@@ -10,4 +10,7 @@
   when: nodejs_upstream
 
 - name: APT | Install packages
-  apt: pkg=nodejs state=present
+  apt: pkg={{ item }} state=present
+  with_items:
+    - nodejs
+    - npm

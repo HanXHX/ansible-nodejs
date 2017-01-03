@@ -1,5 +1,5 @@
-Role Name
-=========
+NodeJS Ansible role
+===================
 
 [![Build Status](https://travis-ci.org/HanXHX/ansible-nodejs.svg)](https://travis-ci.org/HanXHX/ansible-nodejs)
 
@@ -13,8 +13,9 @@ None
 Role Variables
 --------------
 
-- `nodejs_upstream`: boolean (default: true), install from upstream repository (version 4.\*)
+- `nodejs_upstream`: boolean (default: true), install from upstream repository
 - `nodejs_upstream_src`: boolean (default: false), add upstream src (apt) repository
+- `nodejs_upstream_version`: integer (default: 6)
 
 Dependencies
 ------------
@@ -24,11 +25,9 @@ None
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: HanXHX.nodejs, nodejs_origin: 'upstream' }
+         - { role: HanXHX.nodejs }
 
 License
 -------
@@ -38,4 +37,4 @@ GPLv2
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+- Twitter: [@hanxhx_](https://twitter.com/hanxhx_)

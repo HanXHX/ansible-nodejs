@@ -1,4 +1,5 @@
 ---
 
-nodejs_origin: true
+nodejs_upstream: true
 nodejs_upstream_src: false
+nodejs_upstream_version: 6
