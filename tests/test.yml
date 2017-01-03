@@ -13,3 +13,4 @@
         name=jsdom
         production=yes
         path={{ test_dir }}
+      changed_when: false
