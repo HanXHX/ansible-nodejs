@@ -5,6 +5,8 @@ matrix:
 
 sudo: required
 
+dist: trusty
+
 language: python
 
 services:
