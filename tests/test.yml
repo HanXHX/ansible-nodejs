@@ -4,10 +4,7 @@
   vars:
     test_dir: /tmp/node
   pre_tasks:
-    - apt_repository: repo='deb http://httpredir.debian.net/debian wheezy-backports main'
-      when: >
-        ansible_distribution_release == 'wheezy' and
-        not nodejs_upstream
+    - debug: var=nodejs_upstream
   roles:
     - ../../
   post_tasks:

@@ -1,6 +1,7 @@
-env:
-  - PLATFORM=debian-wheezy
-  - PLATFORM=debian-jessie
+matrix:
+  include:
+    - env: PLATFORM=debian-jessie ORIGIN=debian
+    - env: PLATFORM=debian-jessie ORIGIN=upstream
 
 sudo: required
 
@@ -10,4 +11,7 @@ services:
   - docker
 
 script:
-  - docker build -f tests/$PLATFORM.Dockerfile -t test-$PLATFORM . && docker run --name $PLATFORM test-$PLATFORM
+  - docker build -f tests/$PLATFORM.Dockerfile -t test-$PLATFORM . && docker run -e "ORIGIN=$ORIGIN" --name $PLATFORM test-$PLATFORM
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

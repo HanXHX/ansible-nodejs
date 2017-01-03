@@ -5,11 +5,9 @@
 
 Vagrant.configure("2") do |config|
 
-  vms = [
-    [ "debian-wheezy-upstream", "deb/wheezy-amd64", "192.168.39.29", "upstream" ],
-    [ "debian-wheezy-debian",   "deb/wheezy-amd64", "192.168.39.29", "debian"   ],
-    [ "debian-jessie-upstream", "deb/jessie-amd64", "192.168.39.31", "upstream" ],
-    [ "debian-jessie-debian",   "deb/jessie-amd64", "192.168.39.32", "debian"   ]
+  vms_debian = [
+    { :box => "debian/jessie64", :name => "debian-jessie",          :vars => { "nodejs_upstream": false }},
+    { :box => "debian/jessie64", :name => "debian-jessie-upstream", :vars => { "nodejs_upstream": true  }},
   ]
 
   config.vm.provider "virtualbox" do |v|
@@ -17,19 +15,17 @@ Vagrant.configure("2") do |config|
     v.memory = 256
   end
 
-  vms.each do |vm|
-    config.vm.define vm[0] do |m|
-      m.vm.box = vm[1]
-      m.vm.network "private_network", ip: vm[2]
-
+  vms_debian.each do |opts|
+    config.vm.define opts[:name] do |m|
+      m.vm.box = opts[:box]
+      m.vm.network "private_network", type: "dhcp"
       m.vm.provision "ansible" do |ansible|
         ansible.playbook = "tests/test.yml"
-        ansible.groups = { 
-          vm[3] => vm[0] 
-				}
         ansible.verbose = 'vv'
-				ansible.sudo = true
+        ansible.sudo = true
+        ansible.extra_vars = opts[:vars]
       end
     end
   end
+
 end

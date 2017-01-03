@@ -8,6 +8,8 @@ PLAYBOOK="$DIR/test-travis.yml"
 
 set -ev
 
+ANSIBLE_VARS="{ nodejs_upstream: $UPSTREAM }"
+
 # Check syntax
 ansible-playbook -i $INVENTORY_FILE -c local --syntax-check -vv $PLAYBOOK
 
