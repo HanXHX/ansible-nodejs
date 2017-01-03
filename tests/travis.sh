@@ -4,7 +4,7 @@
 
 DIR=$( dirname $0 )
 INVENTORY_FILE="$DIR/inventory"
-PLAYBOOK="$DIR/test-travis.yml"
+PLAYBOOK="$DIR/test.yml"
 
 set -ev
 
