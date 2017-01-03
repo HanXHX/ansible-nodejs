@@ -1,16 +1,14 @@
 ---
 
 - name: APT | Update
-  apt: >
-    update_cache=yes
-    cache_valid_time=3600
+  apt: update_cache=yes cache_valid_time=3600
+  changed_when: false
 
-- name: INCLUDE | Install Upstream repository
+- name: INCLUDE | Install upstream repository
   include: upstream.yml
   when: nodejs_upstream
 
 - name: APT | Install packages
-  apt: pkg={{ item }} state=present
-  with_items:
-    - nodejs
-    - npm
+  apt: pkg="{{ item }}" state=present
+  with_items: ['nodejs', 'npm']
+  when: not nodejs_upstream
