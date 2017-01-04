@@ -1,7 +1,7 @@
 NodeJS Ansible role
 ===================
 
-[![Build Status](https://travis-ci.org/HanXHX/ansible-nodejs.svg)](https://travis-ci.org/HanXHX/ansible-nodejs)
+ [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.nodejs-blue.svg)](https://galaxy.ansible.com/HanXHX/nodejs/) [![Build Status](https://travis-ci.org/HanXHX/ansible-nodejs.svg)](https://travis-ci.org/HanXHX/ansible-nodejs)
 
 Install Node.js and NPM.
 

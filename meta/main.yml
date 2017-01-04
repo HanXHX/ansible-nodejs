@@ -1,18 +1,22 @@
 ---
+
 galaxy_info:
-  author: your name
-  description: 
-  company: your company (optional)
-  license: license (GPLv2, CC-BY, etc)
-  min_ansible_version: 1.6
+  author: Emilien Mantel
+  description: NodeJS/NPM for Debian
+  company:
+  license: GPLv2
+  min_ansible_version: 2.0
   platforms:
   - name: Debian
     versions:
-    - wheezy
     - jessie
-  categories:
-  - development
+  galaxy_tags:
+  - debian
+  - javascript
+  - js
+  - nodejs
+  - npm
   - packaging
   - web
 dependencies: []
- 
+
