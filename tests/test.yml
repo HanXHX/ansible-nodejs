@@ -3,8 +3,6 @@
 - hosts: all
   vars:
     test_dir: /tmp/node
-  pre_tasks:
-    - debug: var=nodejs_upstream
   roles:
     - ../../
   post_tasks:
