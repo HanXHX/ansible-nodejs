@@ -8,14 +8,14 @@ Install Node.js and NPM.
 Requirements
 ------------
 
-None
+On Debian Stretch, you must install backports repository (NPM only available on it).
 
 Role Variables
 --------------
 
 - `nodejs_upstream`: boolean (default: true), install from upstream repository
 - `nodejs_upstream_src`: boolean (default: false), add upstream src (apt) repository
-- `nodejs_upstream_version`: integer (default: 6)
+- `nodejs_upstream_version`: integer (default: 10)
 
 Dependencies
 ------------

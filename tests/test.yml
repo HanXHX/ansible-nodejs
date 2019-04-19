@@ -3,12 +3,20 @@
 - hosts: all
   vars:
     test_dir: /tmp/node
+  pre_tasks:
+    - name: APT_REPOSITORY | Backports for Stretch
+      apt_repository:
+        repo: 'deb http://deb.debian.org/debian stretch-backports main'
+        state: "{{ 'present' if ansible_distribution_release == 'stretch' else 'absent' }}"
   roles:
     - ../../
   post_tasks:
-    - file: path={{ test_dir }} state=directory
-    - npm: >
-        name=jsdom
-        production=yes
-        path={{ test_dir }}
-      changed_when: false
+    - name: FILE | Create test dir
+      file:
+        path: "{{ test_dir }}"
+        state: directory
+    - name: NPM | Install package
+      npm:
+        name: jsdom
+        production: yes
+        path: "{{ test_dir }}"
