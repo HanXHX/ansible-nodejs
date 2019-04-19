@@ -1,14 +1,22 @@
 ---
 
-- name: APT | Update
-  apt: update_cache=yes cache_valid_time=3600
-  changed_when: false
+- name: SET_FACT | Bypass https://github.com/ansible/ansible/issues/19874
+  set_fact:
+    ansible_distribution_release: 'buster'
+  when: ansible_facts.distribution_major_version == "buster/sid"
 
-- name: INCLUDE | Install upstream repository
-  include: upstream.yml
+- name: IMPORT_TASKS | Install upstream repository
+  import_tasks: upstream.yml
   when: nodejs_upstream
 
-- name: APT | Install packages
-  apt: pkg="{{ item }}" state=present
-  with_items: ['nodejs', 'npm']
+- name: APT | Install NodeJS
+  apt:
+    pkg: "nodejs"
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: APT | Install NPM
+  apt:
+    pkg: "npm"
+    default_release: "{{ ansible_distribution_release if ansible_distribution_release != 'stretch' else 'stretch-backports' }}"
   when: not nodejs_upstream
