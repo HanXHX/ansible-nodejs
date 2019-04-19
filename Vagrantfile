@@ -10,13 +10,17 @@ Vagrant.configure("2") do |config|
     { :name => "debian-jessie-upstream",  :box => "debian/jessie64",  :vars => { "nodejs_upstream": true  }},
     { :name => "debian-stretch",          :box => "debian/stretch64", :vars => { "nodejs_upstream": false }},
     { :name => "debian-stretch-upstream", :box => "debian/stretch64", :vars => { "nodejs_upstream": true  }},
+    { :name => "debian-buster",           :box => "debian/buster64",  :vars => { "nodejs_upstream": false }},
+    { :name => "debian-buster-upstream",  :box => "debian/buster64",  :vars => { "nodejs_upstream": true  }},
 	]
 
   conts = [
-    { :name => "docker-debian-jessie",           :docker => "hanxhx/vagrant-ansible:debian8", :vars => { "nodejs_upstream": false }},
-    { :name => "docker-debian-jessie-upstream",  :docker => "hanxhx/vagrant-ansible:debian8", :vars => { "nodejs_upstream": true  }},
-    { :name => "docker-debian-stretch",          :docker => "hanxhx/vagrant-ansible:debian9", :vars => { "nodejs_upstream": false }},
-    { :name => "docker-debian-stretch-upstream", :docker => "hanxhx/vagrant-ansible:debian9", :vars => { "nodejs_upstream": true  }},
+    { :name => "docker-debian-jessie",           :docker => "hanxhx/vagrant-ansible:debian8",  :vars => { "nodejs_upstream": false }},
+    { :name => "docker-debian-jessie-upstream",  :docker => "hanxhx/vagrant-ansible:debian8",  :vars => { "nodejs_upstream": true  }},
+    { :name => "docker-debian-stretch",          :docker => "hanxhx/vagrant-ansible:debian9",  :vars => { "nodejs_upstream": false }},
+    { :name => "docker-debian-stretch-upstream", :docker => "hanxhx/vagrant-ansible:debian9",  :vars => { "nodejs_upstream": true  }},
+    { :name => "docker-debian-buster",           :docker => "hanxhx/vagrant-ansible:debian10", :vars => { "nodejs_upstream": false }},
+    { :name => "docker-debian-buster-upstream",  :docker => "hanxhx/vagrant-ansible:debian10", :vars => { "nodejs_upstream": true  }},
   ]
 
 
