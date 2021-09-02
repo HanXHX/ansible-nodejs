@@ -2,4 +2,4 @@
 
 nodejs_upstream: true
 nodejs_upstream_src: false
-nodejs_upstream_version: 10
+nodejs_upstream_version: 16

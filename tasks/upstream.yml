@@ -1,10 +1,14 @@
 ---
 
-- name: APT | Install apt-transport-https
+- name: APT | Install apt packages
   apt:
-    pkg: apt-transport-https
+    pkg: "{{ pkgs }}"
     update_cache: yes
     cache_valid_time: 3600
+  vars:
+    pkgs:
+      - apt-transport-https
+      - gpg
 
 - name: APT_KEY | Get GPG key
   apt_key:
