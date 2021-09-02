@@ -13,5 +13,5 @@
     - name: NPM | Install package
       npm:
         name: jsdom
-        production: yes
+        production: true
         path: "{{ test_dir }}"
