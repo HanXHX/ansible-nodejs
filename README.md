@@ -8,12 +8,12 @@ Install Node.js and NPM.
 Managed OS
 ----------
 
-| OS                   | Working  | Active support |
-|:--------------------:|:--------:|:--------------:|
-| Debian Jessie (8)    | :x:      | :heavy_check_mark: Check latest supported version ([1.2.0](https://github.com/HanXHX/ansible-nodejs/releases/tag/1.2.0)) |
-| Debian Stretch (9)   | :x:      | :heavy_check_mark: Check latest supported version ([1.2.0](https://github.com/HanXHX/ansible-nodejs/releases/tag/1.2.0)) |
-| Debian Buster (10)   | :x:      | :x:            |
-| Debian Bullseye (11) | :x:      | :x:            |
+| OS                   |        Working      |    Active support   |
+|:--------------------:|:-------------------:|:-------------------:|
+| Debian Jessie (8)    | :heavy_check_mark:  | :x: Check latest supported version ([1.2.0](https://github.com/HanXHX/ansible-nodejs/releases/tag/1.2.0)) |
+| Debian Stretch (9)   | :heavy_check_mark:  | :x: Check latest supported version ([1.2.0](https://github.com/HanXHX/ansible-nodejs/releases/tag/1.2.0)) |
+| Debian Buster (10)   | :heavy_check_mark:  | :heavy_check_mark:  |
+| Debian Bullseye (11) | :heavy_check_mark:  | :heavy_check_mark:  |
 
 
 Role Variables
