@@ -27,7 +27,7 @@ Dependencies
 ------------
 
 - Ansible >= 2.11
-- Collections: none
+- Collections: community.general
 
 Example Playbook
 ----------------
