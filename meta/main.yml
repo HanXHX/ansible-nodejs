@@ -7,17 +7,17 @@ galaxy_info:
   license: GPLv2
   min_ansible_version: 2.6
   platforms:
-  - name: Debian
-    versions:
-    - buster
-    - bullseye
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
   galaxy_tags:
-  - debian
-  - javascript
-  - js
-  - nodejs
-  - npm
-  - packaging
-  - web
-dependencies: []
+    - debian
+    - javascript
+    - js
+    - nodejs
+    - npm
+    - packaging
+    - web
 
+dependencies: []
