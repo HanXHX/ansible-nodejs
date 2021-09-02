@@ -5,10 +5,15 @@ NodeJS Ansible role
 
 Install Node.js and NPM.
 
-Requirements
-------------
+Managed OS
+----------
 
-On Debian Stretch, you must install backports repository (NPM only available on it).
+| OS                   | Working  | Active support |
+|:--------------------:|:--------:|:--------------:|
+| Debian Jessie (8)    | :x:      | :heavy_check_mark: Check latest supported version ([1.2.0](https://github.com/HanXHX/ansible-nodejs/releases/tag/1.2.0)) |
+| Debian Stretch (9)   | :x:      | :heavy_check_mark: Check latest supported version ([1.2.0](https://github.com/HanXHX/ansible-nodejs/releases/tag/1.2.0)) |
+| Debian Buster (10)   | :x:      | :x:            |
+
 
 Role Variables
 --------------

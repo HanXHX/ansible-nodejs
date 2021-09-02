@@ -3,11 +3,6 @@
 - hosts: all
   vars:
     test_dir: /tmp/node
-  pre_tasks:
-    - name: APT_REPOSITORY | Backports for Stretch
-      apt_repository:
-        repo: 'deb http://deb.debian.org/debian stretch-backports main'
-        state: "{{ 'present' if ansible_distribution_release == 'stretch' else 'absent' }}"
   roles:
     - ../../
   post_tasks:
