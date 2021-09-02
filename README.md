@@ -1,7 +1,7 @@
 NodeJS Ansible role
 ===================
 
- [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.nodejs-blue.svg)](https://galaxy.ansible.com/HanXHX/nodejs/) [![Build Status](https://travis-ci.org/HanXHX/ansible-nodejs.svg)](https://travis-ci.org/HanXHX/ansible-nodejs)
+ [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-HanXHX.nodejs-blue.svg)](https://galaxy.ansible.com/HanXHX/nodejs/) [![Build Status](https://app.travis-ci.com/HanXHX/ansible-nodejs.svg?branch=master)](https://app.travis-ci.com/HanXHX/ansible-nodejs)
 
 Install Node.js and NPM.
 
@@ -26,7 +26,8 @@ Role Variables
 Dependencies
 ------------
 
-None
+- Ansible >= 2.11
+- Collections: none
 
 Example Playbook
 ----------------
