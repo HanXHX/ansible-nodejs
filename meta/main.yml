@@ -1,6 +1,8 @@
 ---
 
 galaxy_info:
+  namespace: hanxhx
+  role_name: nodejs
   author: Emilien Mantel
   description: NodeJS/NPM for Debian
   company:

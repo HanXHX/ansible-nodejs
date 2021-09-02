@@ -10,6 +10,7 @@
       file:
         path: "{{ test_dir }}"
         state: directory
+        mode: 0755
     - name: NPM | Install package
       npm:
         name: jsdom
