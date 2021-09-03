@@ -7,12 +7,12 @@
     - ../../
   post_tasks:
     - name: FILE | Create test dir
-      file:
+      ansible.builtin.file:
         path: "{{ test_dir }}"
         state: directory
         mode: 0755
     - name: NPM | Install package
-      npm:
+      community.general.npm:
         name: jsdom
         production: true
         path: "{{ test_dir }}"

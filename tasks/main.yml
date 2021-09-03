@@ -1,21 +1,21 @@
 ---
 
 - name: IMPORT_TASKS | Install upstream repository
-  import_tasks: upstream.yml
+  ansible.builtin.import_tasks: upstream.yml
   when: nodejs_upstream
 
 - name: APT | Install NodeJS
-  apt:
+  ansible.builtin.apt:
     pkg: "nodejs"
     update_cache: true
     cache_valid_time: 3600
 
 - name: STAT | Check if npm is installed
-  stat:
+  ansible.builtin.stat:
     path: /usr/bin/npm
   register: path_npm
 
 - name: APT | Install npm if needed
-  apt:
+  ansible.builtin.apt:
     name: npm
   when: not path_npm.stat.exists
