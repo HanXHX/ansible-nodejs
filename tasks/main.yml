@@ -9,3 +9,13 @@
     pkg: "nodejs"
     update_cache: true
     cache_valid_time: 3600
+
+- name: STAT | Check if npm is installed
+  stat:
+    path: /usr/bin/npm
+  register: path_npm
+
+- name: APT | Install npm if needed
+  apt:
+    name: npm
+  when: not path_npm.stat.exists
